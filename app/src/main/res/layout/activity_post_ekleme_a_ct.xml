@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.animeproje.PostEklemeACt">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_marginTop="25dp"
+        android:id="@+id/selected_image"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="150dp">
+
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <ImageView
+        android:id="@+id/post_postimage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_image"
+        android:tint="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selected_image" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resim Seç"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_postimage" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        android:id="@+id/card"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="8dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/post_aciklama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:hint="Açıklama"
+            android:background="@null"
+            android:backgroundTint="@null"
+            android:inputType="textMultiLine"
+            android:lines="6"
+            android:paddingStart="20dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            tools:layout_editor_absoluteX="9dp" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/resim_button"
+        android:textColor="@color/colorWhite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/card"
+        app:layout_constraintEnd_toEndOf="@id/card"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_background"
+        android:text="Gönderiyi Paylaş"
+        android:textAllCaps="false"
+        android:textSize="23sp"
+        app:layout_constraintTop_toBottomOf="@id/card" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

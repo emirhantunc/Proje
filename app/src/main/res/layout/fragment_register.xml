@@ -1,0 +1,178 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/arkaplan5"
+    tools:context="com.example.animeproje.Fragment.RegisterFragment">
+
+    <include
+        android:id="@+id/logo1"
+        layout="@layout/loginlogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/isim_edittext"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:maxLength="20"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login_background"
+        android:drawableStart="@drawable/ic_account_box"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/colorWhite"
+        android:hint="İsim"
+        android:paddingLeft="10dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo1"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <EditText
+        android:id="@+id/soyisim_edittext"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:maxLength="15"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/login_background"
+        android:drawableStart="@drawable/ic_account_box"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/colorWhite"
+        android:hint="Soyisim"
+        android:paddingLeft="20dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/isim_edittext"
+        app:layout_constraintTop_toTopOf="@id/isim_edittext"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <EditText
+        android:id="@+id/registeremail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/login_background"
+        android:drawableStart="@drawable/ic_account"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/colorWhite"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/isim_edittext" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/registersifre_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/registeremail"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="@color/colorWhite">
+
+        <EditText
+            android:id="@+id/registersifre"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/login_background"
+            android:hint="Şifre"
+            android:inputType="textPassword"
+            android:paddingEnd="16dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/registersifretekrar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/registersifre_layout"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="@color/colorWhite">
+
+        <EditText
+            android:id="@+id/registersifretekrar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/login_background"
+            android:hint="Şifre Tekrar"
+            android:inputType="textPassword"
+            android:paddingEnd="16dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/registersifre_layout" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/registerbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/button_background"
+        android:text="Kayıt Ol"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/yas_view" />
+    <TextView
+        android:id="@+id/yas_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="11-11-2021"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="@id/yas_button"
+        app:layout_constraintEnd_toEndOf="@id/yas_button"
+        app:layout_constraintTop_toBottomOf="@id/yas_button"/>
+
+    <Button
+        android:textStyle="bold"
+        android:id="@+id/yas_button"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/registersifretekrar_layout"
+        app:layout_constraintStart_toStartOf="@id/registerbutton"
+        app:layout_constraintEnd_toEndOf="@id/registerbutton"
+        android:textSize="21sp"
+        android:text="Doğum Tarihiniz" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

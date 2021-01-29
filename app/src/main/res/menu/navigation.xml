@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/postbutton"
+        android:icon="@drawable/ic_home"
+        android:title="Post" />
+
+    <item
+        android:id="@+id/mesaj"
+        android:icon="@drawable/ic_message"
+        android:title="mesaj" />
+    <item
+        android:id="@+id/postekle"
+        android:icon="@drawable/ic_postekle"
+        android:title="postekle" />
+
+    <item
+        android:id="@+id/ProfileButton"
+        android:icon="@drawable/ic_account"
+        android:title="profil" />
+
+</menu>
