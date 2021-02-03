@@ -27,6 +27,7 @@ class HomeFragment : BaseFragment() {
         openFragment(postFragment)
         root.navigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
+
                 R.id.ProfileButton -> {
                     openFragment(profilefragment)
                     return@setOnNavigationItemSelectedListener true

@@ -7,22 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.SettingsFragment">
 
-    <Button
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingEnd="200dp"
-        android:drawableStart="@drawable/ic_account_box"
-        android:drawableTint="@color/colorWhite"
-        android:text="Profili Düzenle"
-        android:background="@color/colorBlack"
-        android:textColor="@color/colorWhite"
-        android:textAllCaps="false"
-        android:id="@+id/profilidüzenlebutton"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="20sp"
-        />
+
 
     <Button
         android:id="@+id/hesap_cikis_button"
@@ -36,7 +21,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/profilidüzenlebutton"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

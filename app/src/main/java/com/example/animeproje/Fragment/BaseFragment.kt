@@ -10,10 +10,12 @@ import androidx.fragment.app.Fragment
 import com.example.animeproje.MainActivity
 import com.example.animeproje.util.Loading
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
 
 open class BaseFragment : Fragment() {
     private lateinit var loading: Dialog
     lateinit var auth: FirebaseAuth
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

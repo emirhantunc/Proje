@@ -10,7 +10,7 @@
         android:id="@+id/card1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="35dp"
         android:layout_marginTop="35dp"
         app:cardCornerRadius="300dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,11 +27,12 @@
         android:id="@+id/profile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/card1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/card1" />
 
     <TextView
@@ -114,15 +115,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/profil_yas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/profil_yas"
-        app:layout_constraintStart_toStartOf="@id/profile_name"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintTop_toBottomOf="@id/profile_name"
-        android:textSize="20sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/kapalıgri"
+        android:drawableStart="@drawable/erkek"
+        android:paddingStart="8dp"
+        android:textColor="@color/şeffaf"
+        android:textSize="13sp"
         android:textStyle="italic"
-        />
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_name" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:id="@+id/düzenle"
+        app:layout_constraintTop_toBottomOf="@id/profil_yas"
+        android:text="Profili Düzenle"
+        android:drawablePadding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="10dp"
+        android:drawableTint="@color/colorWhite"
+        android:background="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        android:drawableStart="@drawable/ic_account_box"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

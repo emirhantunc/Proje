@@ -34,6 +34,8 @@ import kotlin.system.measureNanoTime
 class RegisterFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener {
     var birthday = ""
+    var cinsiyet = ""
+
     var day = 0
     var month = 0
     var year = 0
@@ -65,6 +67,7 @@ class RegisterFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
                 singupuser()
             } else {
                 alertdialog()
+
             }
         }
         return root
@@ -90,9 +93,21 @@ class RegisterFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
         savedDay = dayOfMonth
         savedMoth = month + 1
         savedYear = year
-        birthday = "$savedDay-$savedMoth-$savedYear"
+        val yas = root.yas_view.text.toString()
+        if (savedMoth != 10 && savedMoth != 11 && savedMoth != 12) {
+            birthday = "$savedDay-0$savedMoth-$savedYear"
+        } else {
+            birthday = "$savedDay-$savedMoth-$savedYear"
+
+        }
         root.yas_view.text = birthday
         getDateTimeCalendar()
+        if (yas.isNullOrEmpty()) {
+            root.yas_view.visibility = View.GONE
+        }
+        else {
+            root.yas_view.visibility = View.VISIBLE
+        }
         // TimePickerDialog(context, this, hour, minute, true).show()
     }
 
@@ -103,12 +118,12 @@ class RegisterFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
 
 
     fun singupuser() {
-
         val mail = root.registeremail.text.toString()
         val sifre = root.registersifre.text.toString()
         val sifretekrar = root.registersifretekrar.text.toString()
         val isim = root.isim_edittext.text.toString()
         val soyisim = root.soyisim_edittext.text.toString()
+        val yas = root.yas_view.text.toString()
 
 
         when {
@@ -148,9 +163,26 @@ class RegisterFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
             }
             sifre.length < 6 -> {
                 hazirmsj("Şifre en az 6 haneli olmak zorundadır")
+                return
+            }
+            birthday.isNullOrEmpty() -> {
+                hazirmsj("Lütfen Yaşınızı Giriniz")
+                return
+            }
+
+        }
+        when {
+            radio_erkek.isChecked -> {
+                cinsiyet = "erkek"
+            }
+            radio_kadın.isChecked -> {
+                cinsiyet = "kadın"
+            }
+            else -> {
+                hazirmsj("Lütfen Bir Cinsiyet Belirtin!")
+                return
             }
         }
-
         showLoading()
         auth.createUserWithEmailAndPassword(mail, sifre).addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -159,7 +191,12 @@ class RegisterFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
                     if (tast.isSuccessful) {
                         hazirmsj("Başarılı,E-mailinizi Kontrol Ediniz")
                         val ref = database.child("users").child(user.uid)
-                        val map = hashMapOf("adi" to isim, "soyadi" to soyisim, "yasi" to birthday)
+                        val map = hashMapOf(
+                            "adi" to isim,
+                            "soyadi" to soyisim,
+                            "birthday" to birthday,
+                            "cinsiyet" to cinsiyet
+                        )
                         ref.setValue(map).addOnCompleteListener {
                             if (it.isSuccessful) {
                                 sayfadegistir(LoginFragment())

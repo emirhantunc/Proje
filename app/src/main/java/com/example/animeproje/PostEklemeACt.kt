@@ -17,12 +17,15 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ServerValue
 import com.google.firebase.storage.FirebaseStorage
+import id.zelory.compressor.Compressor
 import kotlinx.android.synthetic.main.activity_post_ekleme_a_ct.*
 import java.util.*
 
 
 class PostEklemeACt : BaseActivity() {
+
     private lateinit var database: DatabaseReference
     lateinit var auth: FirebaseAuth
     private var filepath: Uri? = null
@@ -75,7 +78,11 @@ class PostEklemeACt : BaseActivity() {
                             val aciklama = post_aciklama.text.toString()
                             val user = auth.currentUser
                             val ref = database.child("post").child(user?.uid!!).push()
-                            val map = hashMapOf("imageUrl" to url, "icerik" to aciklama)
+                            val map = hashMapOf(
+                                "imageUrl" to url,
+                                "icerik" to aciklama,
+                                "tarih" to ServerValue.TIMESTAMP
+                            )
                             ref.setValue(map).addOnCompleteListener { post ->
                                 if (post.isSuccessful) {
                                     Toast.makeText(

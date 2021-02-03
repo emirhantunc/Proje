@@ -57,6 +57,7 @@
             android:gravity="top"
             android:hint="Açıklama"
             android:background="@null"
+            android:maxLength="300"
             android:backgroundTint="@null"
             android:inputType="textMultiLine"
             android:lines="6"
