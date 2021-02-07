@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:background="@color/colorBlack"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBlack"
     tools:context=".Fragment.SettingsFragment">
 
 
+    <Button
+        android:id="@+id/Sifre_degistir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack"
+        android:text="Parola Sıfırlama"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        />
 
     <Button
         android:id="@+id/hesap_cikis_button"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/cikis_button"
         android:drawableTint="@color/colorWhite"
         android:text="Hesaptan Çıkış Yap"
@@ -21,7 +33,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Sifre_degistir"
         tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

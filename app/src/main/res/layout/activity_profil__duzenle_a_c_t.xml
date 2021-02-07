@@ -8,10 +8,20 @@
     tools:context=".Profil_DuzenleACT">
 
     <ImageView
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/onaylabutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_tick_box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ImageView
         android:id="@+id/ımage"
         android:layout_width="300dp"
         android:layout_height="100dp"
+        android:layout_marginTop="70dp"
         android:foregroundGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,24 +29,53 @@
 
     <ImageView
         android:id="@+id/image"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_image"
         android:tint="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ımage" />
 
-    <Button
-        android:id="@+id/onaylabutton"
+    <EditText
+        android:id="@+id/degistir_isim"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:background="@color/colorBlack"
+        android:hint="Yeni İsminiz  (Zorunlu Değil)"
+        android:paddingStart="15dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image" />
+
+    <EditText
+        android:id="@+id/degistir_soyisim"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorBlack"
+        android:hint="Yeni Soyisminiz  (Zorunlu Değil)"
+        android:paddingStart="15dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/degistir_isim" />
+
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/degistir_Sifre"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
         android:layout_marginTop="20dp"
-        android:background="@drawable/profilduzenle_button"
-        android:text="Onayla"
-        android:textAllCaps="false"
-        android:textColor="@color/colorBlack"
-        android:textSize="25sp"
-        app:layout_constraintTop_toBottomOf="@id/image" />
+        android:paddingStart="15dp"
+        android:hint="Şifreniz  (Zorunlu)"
+        android:textColorHint="@color/colorWhite"
+        app:layout_constraintTop_toBottomOf="@id/degistir_soyisim" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

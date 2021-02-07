@@ -18,6 +18,8 @@ import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
 import com.example.animeproje.R
+import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -35,7 +37,6 @@ class RegisterFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener {
     var birthday = ""
     var cinsiyet = ""
-
     var day = 0
     var month = 0
     var year = 0
@@ -61,7 +62,6 @@ class RegisterFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
         root = inflater.inflate(R.layout.fragment_register, container, false)
         pickDate()
         database = FirebaseDatabase.getInstance().reference
-
         root.registerbutton.setOnClickListener {
             if (isNetworkAvailable(context!!)) {
                 singupuser()

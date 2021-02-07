@@ -18,7 +18,19 @@ class PostAdapter(
     class PostViewHolder(view: View, val postinterface: postinterface) :
         RecyclerView.ViewHolder(view) {
         fun bind(item: post) {
-            imageclass.imgload(itemView.context, item.profilresim, itemView.profilresmi)
+
+            if (item.profilresim.isNullOrEmpty() || item.profilresim == "null") { //null text olarak geldiği için hem null hem empty olmuyor o yüzden "null" olarak gelirse diye kontrol
+                if (item.cinsiyet == "erkek") {
+                    itemView.profilresmi.setBackgroundResource(R.drawable.icons8)
+                } else {
+                    itemView.profilresmi.setBackgroundResource(R.drawable.ic_kadin_resim)
+                }
+            } else {
+                imageclass.imgload(itemView.context, item.profilresim!!, itemView.profilresmi)
+            }
+
+
+
             imageclass.imgload(itemView.context, item.postresim, itemView.postresmi)
             itemView.text_isim.text = item.name
             itemView.tarih.text = item.tarih
@@ -26,6 +38,15 @@ class PostAdapter(
 
             itemView.postresmi.setOnClickListener {
                 postinterface.clickpost(item)
+            }
+            itemView.profilresmi .setOnClickListener {
+                postinterface.clickprofile(item)
+            }
+            itemView.text_isim.setOnClickListener{
+                postinterface.clickprofile(item)
+           }
+            itemView.kalp.setOnClickListener{
+                postinterface.clicklike(item)
             }
         }
 
@@ -43,5 +64,6 @@ class PostAdapter(
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.bind(list[position])
+
     }
 }

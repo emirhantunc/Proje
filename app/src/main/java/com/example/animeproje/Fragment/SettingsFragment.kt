@@ -25,7 +25,17 @@ class SettingsFragment : BaseFragment() {
         root.hesap_cikis_button.setOnClickListener {
             alertdialog()
         }
+        root.Sifre_degistir.setOnClickListener {
+            sifreDegistirFragment()
+        }
         return root
+    }
+
+
+    fun sifreDegistirFragment() {
+
+        sayfadegistir(SifreDegistirFragment())
+
     }
 
     fun alertdialog() {

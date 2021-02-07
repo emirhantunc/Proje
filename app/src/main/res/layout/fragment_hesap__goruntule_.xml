@@ -1,13 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBlack"
-    tools:context="com.example.animeproje.Fragment.ProfileFragment">
+    tools:context=".Fragment.Hesap_Goruntule_Fragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card1"
+        android:id="@+id/card2"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="35dp"
@@ -17,24 +19,24 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/profile_resim"
+            android:id="@+id/hesapgoruntule_profile_resim"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
             android:scaleType="center" />
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/profile_name"
+        android:id="@+id/hesapgoruntule_isim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
+        android:text="Merhaba"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card1" />
+        app:layout_constraintTop_toBottomOf="@id/card2" />
 
     <TextView
         android:id="@+id/profile_gönderi_yazısı"
@@ -44,9 +46,9 @@
         android:text="Gönderi"
         android:textColor="@color/colorWhite"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@id/card1"
+        app:layout_constraintBottom_toBottomOf="@id/card2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/card1" />
+        app:layout_constraintStart_toEndOf="@id/card2" />
 
     <TextView
         android:id="@+id/profile_takipci_yazisi"
@@ -103,17 +105,6 @@
         app:layout_constraintEnd_toEndOf="@id/profile_takip_yazisi"
         app:layout_constraintStart_toStartOf="@id/profile_takip_yazisi" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/settings_button"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start|bottom"
-        android:layout_marginTop="10dp"
-        android:background="?attr/selectableItemBackground"
-        android:src="@drawable/ic_settings"
-        android:tint="@color/colorWhite"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/profil_yas"
@@ -121,45 +112,47 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
-        android:background="@color/kapalıgri"
-        android:drawableStart="@drawable/erkek"
         android:paddingStart="8dp"
         android:textColor="@color/şeffaf"
         android:textSize="13sp"
         android:textStyle="italic"
-        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_name" />
+        app:layout_constraintTop_toBottomOf="@id/hesapgoruntule_isim" />
 
     <Button
-        android:id="@+id/düzenle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorBlack"
-        android:drawableStart="@drawable/ic_account_box"
-        android:drawablePadding="10dp"
-        android:drawableTint="@color/colorWhite"
-        android:text="Profili Düzenle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/blue"
+        android:paddingStart="15dp"
+        android:paddingEnd="30dp"
+        android:text="Takip Et"
         android:textAllCaps="false"
         android:textColor="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:id="@+id/takip_et"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profil_yas" />
+        app:layout_constraintTop_toBottomOf="@id/hesapgoruntule_isim"
+        app:layout_constraintWidth_percent="0.45" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout"
-        android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
+    <Button
+        android:textAllCaps="false"
+        android:text="Mesaj"
+        android:background="@color/colorBlack"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/mesaj"
+        android:paddingStart="15dp"
+        android:layout_marginLeft="8dp"
+        android:paddingEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/takip_et"
+        android:textSize="20sp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/düzenle"
-        app:tabTextColor="@color/colorWhite" />
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tablayout" />
-
+        app:layout_constraintStart_toEndOf="@id/takip_et"
+        app:layout_constraintTop_toTopOf="@+id/takip_et"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

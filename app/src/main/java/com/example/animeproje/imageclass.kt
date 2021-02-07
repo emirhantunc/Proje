@@ -6,8 +6,8 @@ import com.bumptech.glide.Glide
 
 class imageclass {
     companion object imageclass {
-        fun imgload(a: Context, b: String, c: ImageView) {
-            Glide.with(a).load(b).into(c)
+        fun imgload(context: Context, imageUrl: String, imageView: ImageView) {
+            Glide.with(context).load(imageUrl).into(imageView)
         }
     }
 }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
-        android:width="15dp"
-        android:height="15dp"
-        android:drawable="@drawable/ic_erkek"
+        android:width="70dp"
+        android:height="70dp"
+        android:drawable="@drawable/ic_ick"
 
         />
 

@@ -77,8 +77,9 @@ class PostEklemeACt : BaseActivity() {
                             val url = it.result.toString()
                             val aciklama = post_aciklama.text.toString()
                             val user = auth.currentUser
-                            val ref = database.child("post").child(user?.uid!!).push()
+                            val ref = database.child("post").push()
                             val map = hashMapOf(
+                                "userId" to user?.uid,
                                 "imageUrl" to url,
                                 "icerik" to aciklama,
                                 "tarih" to ServerValue.TIMESTAMP
@@ -90,7 +91,8 @@ class PostEklemeACt : BaseActivity() {
                                         "İşlem Başarılı",
                                         Toast.LENGTH_LONG
                                     ).show()
-                                    onBackPressed()
+                                    val intent = Intent(this, MainActivity::class.java)
+                                    startActivity(intent)
                                 } else {
                                     hazirmsj("Bir Hata Oluştu")
                                 }
