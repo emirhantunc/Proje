@@ -47,18 +47,20 @@ class ProfileFragment : BaseFragment() {
                 getTabAt(i)?.icon?.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
             }
         }
-        val adapter = ProfileTabLayout(context!!,childFragmentManager, root.tablayout!!.tabCount)
+        val adapter = ProfileTabLayout(context!!, childFragmentManager, root.tablayout!!.tabCount)
         root.viewPager!!.adapter = adapter
 
-       root.viewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(root.tablayout))
+        root.viewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(root.tablayout))
 
         root.tablayout!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 viewPager!!.currentItem = tab.position
             }
+
             override fun onTabUnselected(tab: TabLayout.Tab) {
 
             }
+
             override fun onTabReselected(tab: TabLayout.Tab) {
 
             }
@@ -87,8 +89,10 @@ class ProfileFragment : BaseFragment() {
                     val birthday = p0.child("birthday").getValue(String::class.java)
                     val cinsiyet = p0.child("cinsiyet").getValue(String::class.java)
                     val profilresim = p0.child("profilimage").getValue(String::class.java)
+                    val biyografi = p0.child("biyografi").getValue(String::class.java)
                     val nullresim = ""
                     root.profile_name.text = isim + " " + soyisim
+                    root.biyografi_profile.text = biyografi
                     if (profilresim != null) {
                         imageclass.imgload(context!!, profilresim ?: "", root.profile_resim)
                     } else {

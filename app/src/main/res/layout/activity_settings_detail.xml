@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_bakugo"
+    tools:context=".SettingsDetailActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:id="@+id/detail_bilgi"
+        android:text="İsim,Soyisim,Doğum Tarihi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/buttonbackground_black"
+        android:textSize="17sp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_birthday"
+        android:text="İsim,Soyisim,Doğum Tarihi"
+        app:layout_constraintTop_toBottomOf="@id/detail_bilgi"
+        app:layout_constraintStart_toStartOf="@id/detail_bilgi"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/buttonbackground_black"
+        android:textSize="17sp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

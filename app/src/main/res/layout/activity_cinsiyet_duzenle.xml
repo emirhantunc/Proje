@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    tools:context=".CinsiyetDuzenleActivity">
+
+    <RadioGroup
+        android:id="@+id/radiogroup_duzenle"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_erkek_duzenle"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Erkek"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            app:buttonTint="@color/colorWhite" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_kadın_duzenle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kadın"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            app:buttonTint="@color/colorWhite" />
+    </RadioGroup>
+    <Button
+        android:id="@+id/cinsiyet_onayla"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_tick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/radiogroup_duzenle"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

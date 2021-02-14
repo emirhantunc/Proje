@@ -8,8 +8,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
         android:layout_marginLeft="35dp"
         android:layout_marginTop="35dp"
         app:cardCornerRadius="300dp"
@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/profile_resim"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
             android:layout_gravity="center"
             android:scaleType="center" />
     </androidx.cardview.widget.CardView>
@@ -108,7 +108,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="start|bottom"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="?attr/selectableItemBackground"
         android:src="@drawable/ic_settings"
         android:tint="@color/colorWhite"
@@ -130,12 +130,26 @@
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_name" />
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="@color/colorWhite"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/profil_yas"
+        android:text="biyografi"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="15sp"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:id="@+id/biyografi_profile"
+
+        />
 
     <Button
         android:id="@+id/düzenle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:background="@color/colorBlack"
         android:drawableStart="@drawable/ic_account_box"
         android:drawablePadding="10dp"
@@ -145,7 +159,7 @@
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profil_yas" />
+        app:layout_constraintTop_toBottomOf="@id/biyografi_profile" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"

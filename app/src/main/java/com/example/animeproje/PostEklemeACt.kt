@@ -135,7 +135,6 @@ class PostEklemeACt : BaseActivity() {
                 } else {
                     hazirmsj("İzin Reddedildi")
                 }
-
             }
         }
     }

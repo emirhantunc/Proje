@@ -1,16 +1,22 @@
 package com.example.animeproje.Adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.PopupMenu
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.animeproje.Fragment.PostFragment
 import com.example.animeproje.Fragment.postinterface
+import com.example.animeproje.MainActivity
 import com.example.animeproje.R
 import com.example.animeproje.imageclass
 import com.example.animeproje.model.post
 import kotlinx.android.synthetic.main.item.view.*
+import kotlin.coroutines.coroutineContext
 
 class PostAdapter(
     val list: List<post>, val postinterface: postinterface
@@ -39,18 +45,25 @@ class PostAdapter(
             itemView.postresmi.setOnClickListener {
                 postinterface.clickpost(item)
             }
-            itemView.profilresmi .setOnClickListener {
+            itemView.profilresmi.setOnClickListener {
                 postinterface.clickprofile(item)
             }
-            itemView.text_isim.setOnClickListener{
+            itemView.text_isim.setOnClickListener {
                 postinterface.clickprofile(item)
-           }
-            itemView.kalp.setOnClickListener{
+            }
+            itemView.kalp.setOnClickListener {
                 postinterface.clicklike(item)
             }
+            itemView.popup.setOnClickListener {
+                var popupmenu = PopupMenu(itemView.context, it)
+                popupmenu.inflate(R.menu.popup)
+                popupmenu.setOnMenuItemClickListener {
+                    MainActivity.openMainact(itemView.context)
+                    true
+                }
+                popupmenu.show()
+            }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {

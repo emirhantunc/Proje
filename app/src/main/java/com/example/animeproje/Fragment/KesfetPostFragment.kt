@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.animeproje.Adapter.PostAdapter
 
@@ -25,7 +26,6 @@ class KesfetPostFragment : BaseFragment() {
     var postList: ArrayList<post> = ArrayList()
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,10 +41,37 @@ class KesfetPostFragment : BaseFragment() {
             }
 
             override fun clickpost(a: post) {
-
+                val resim = a.postresim
+                val bundle = Bundle()
+                bundle.putString("resim", resim)
+                val goruntuleFragment = GoruntuleFragment()
+                goruntuleFragment.arguments = bundle
+                sayfadegistir(goruntuleFragment)
             }
 
             override fun clicklike(a: post) {
+
+            }
+
+            override fun clickpopup(a: post) {
+
+            }
+
+            override fun clickkaydet(a: post) {
+                val user = a.userId
+                val bundle = Bundle()
+                bundle.putString("kaydet", user)
+                val hesapGoruntule = Hesap_Goruntule_Fragment()
+                hesapGoruntule.arguments = bundle
+                sayfadegistir(hesapGoruntule)
+            }
+
+            override fun clickcomment(a: post) {
+                val comment=a.userId
+                val bundle=Bundle()
+                bundle.putString("comment",comment)
+
+
 
             }
 
@@ -139,4 +166,7 @@ interface postinterface {
     fun clickpost(a: post)
     fun clickprofile(a: post)
     fun clicklike(a: post)
+    fun clickpopup(a: post)
+    fun clickkaydet(a: post)
+    fun clickcomment(a: post)
 }

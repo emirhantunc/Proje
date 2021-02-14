@@ -7,23 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.animeproje.R
-import com.example.animeproje.imageclass
-import kotlinx.android.synthetic.main.fragment_goruntule.view.*
-import kotlinx.android.synthetic.main.mesajitem.view.*
 
-
-class GoruntuleFragment : BaseFragment() {
+/**
+ * A simple [Fragment] subclass.
+ */
+class CommentFragment : Fragment() {
     lateinit var root: View
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        root = inflater.inflate(R.layout.fragment_goruntule, container, false)
-        val resimlink = arguments?.getString("resim")
-        imageclass.imgload(context!!, resimlink!!, root.goruntule)
+        root=inflater.inflate(R.layout.fragment_comment, container, false)
         return root
 
     }
+
+}
+interface commentinterface{
+    fun clickprofile()
+
 
 }

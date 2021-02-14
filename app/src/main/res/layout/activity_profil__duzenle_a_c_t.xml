@@ -4,78 +4,164 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlack"
+    android:background="@drawable/ic_bakugo"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
     tools:context=".Profil_DuzenleACT">
 
     <ImageView
-        android:layout_marginTop="30dp"
         android:id="@+id/onaylabutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/ic_tick_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-
-    <ImageView
-        android:id="@+id/ımage"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="70dp"
-        android:foregroundGravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/image"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_duzenle"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_image"
-        android:tint="@color/colorWhite"
+        android:layout_marginTop="100dp"
+        app:cardCornerRadius="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ımage" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+
 
     <EditText
         android:id="@+id/degistir_isim"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="40dp"
-        android:background="@color/colorBlack"
-        android:hint="Yeni İsminiz  (Zorunlu Değil)"
-        android:paddingStart="15dp"
-        android:textColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorWhite"
+        android:drawableStart="@drawable/ic_pen"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/colorBlack"
+        android:hint="Yeni İsminiz"
+        android:paddingStart="10dp"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorBlack"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image" />
+        app:layout_constraintTop_toBottomOf="@id/card_duzenle" />
 
     <EditText
         android:id="@+id/degistir_soyisim"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorBlack"
-        android:hint="Yeni Soyisminiz  (Zorunlu Değil)"
-        android:paddingStart="15dp"
-        android:textColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorWhite"
+        android:drawableStart="@drawable/ic_pen"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/colorBlack"
+        android:hint="Yeni Soyisminiz"
+        android:paddingStart="10dp"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorBlack"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/degistir_isim" />
 
+
     <EditText
+        android:id="@+id/biyografi_duzenle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorWhite"
+        android:drawableStart="@drawable/ic_pen"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/colorBlack"
+        android:hint="Biyografi"
+        android:paddingStart="10dp"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorBlack"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/degistir_soyisim"
+        tools:layout_editor_absoluteX="0dp" />
+    <TextView
+        android:text="Cinsiyet"
+
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:id="@+id/cinsiyet_duzenle"
+        app:layout_constraintTop_toBottomOf="@id/biyografi_duzenle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorWhite"
+        android:paddingStart="10dp"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorBlack"
+        android:textSize="20sp"
+
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/degistir_Sifre_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/degistir_Sifre"
+        android:layout_marginTop="32dp"
+        android:paddingStart="17dp"
+        app:hintEnabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dogumtarihi_textview"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorBlack">
+
+        <EditText
+            android:id="@+id/degistir_Sifre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/colorWhite"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/colorBlack"
+            android:hint="Şifreniz  (Zorunlu)"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/dogumtarihi_textview"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/colorWhite"
+        android:drawableStart="@drawable/ic_pen"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/colorBlack"
+        android:paddingStart="10dp"
+        android:layout_marginRight="15dp"
+        android:text="Doğum Tarihini Değiştir"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
         android:textSize="20sp"
-        android:textColor="@color/colorWhite"
-        android:layout_marginTop="20dp"
-        android:paddingStart="15dp"
-        android:hint="Şifreniz  (Zorunlu)"
-        android:textColorHint="@color/colorWhite"
-        app:layout_constraintTop_toBottomOf="@id/degistir_soyisim" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/biyografi_duzenle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
